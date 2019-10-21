@@ -1,0 +1,8 @@
+.buttons{
+    display: inline;
+}
+
+.button-component {
+    margin: 20px;
+    padding: 5px;
+}

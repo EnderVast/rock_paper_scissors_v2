@@ -1,0 +1,96 @@
+function computerPlay() {
+            function getRndInteger() {
+                return Math.floor(Math.random() * (3)) + 1;
+            }
+            let random_num = getRndInteger();
+            return random_num;
+        }
+
+        function input(player_input) {
+            player_input = player_input.toLowerCase();
+            switch(player_input) {
+                case "rock" :
+                    return 1;
+                case "paper" :
+                    return 2;
+                case "scissors" : 
+                    return 3;
+                default: 
+                    console.log("Please choose either rock, paper or scissors");
+                    return 4;
+            }
+        }
+
+        function score_tracker(x) {
+            if (x == 1) {
+                wins += 1;
+            }
+            if (x == 2) {
+                losses += 1;
+            }
+        }
+
+        function game(playerSelection, computerSelection) {
+            console.log("Game started!");
+            let result = [];
+            //Draw
+            if (playerSelection == computerSelection) {
+                result = [3, "Draw!"];
+                return result;
+            }
+            //Player wins
+            switch(playerSelection) {
+                case 1 :        //Player chooses Rock
+                    if (computerSelection == 3) {
+                        result = [1, "You Win! Rock beats Scissors"];
+                        return result;
+                    }
+                    else if (computerSelection == 2) {
+                        result = [2, "You Lose! Paper beats Rock"];
+                        return result;
+                    }
+                    break;
+                case 2 :        //Player chooses Paper
+                    if (computerSelection == 1) {
+                        result = [1, "You Win! Paper beats Rock"];
+                        return result;
+                    }
+                    else if (computerSelection == 3) {
+                        result = [2, "You Lose! Scissors beats Paper"];
+                        return result;
+                    } 
+                    break;
+                case 3 :        //Player chooses Scissors
+                    if (computerSelection == 2) {
+                        result = [1, "You Win! Scissors beats Paper"];
+                        return result;
+                    }
+                    else if (computerSelection == 1) {
+                        result = [2, "You Lose! Rock beats Scissors"];
+                        return result;
+                    } 
+                    break;  
+            }
+        }
+        let counter = 0;
+        let wins = 0;
+        let losses = 0;
+
+        let computerSelection = computerPlay();
+        let player_input = prompt("Selection");
+        let playerSelection = input(player_input);
+        let game_outcome = game(playerSelection, computerSelection);
+        let game_outcome_msg = game_outcome[1];
+        let game_outcome_score = game_outcome[0];
+        console.log(game_outcome_msg);
+        score_tracker(game_outcome_score);
+
+        if (wins > losses) {
+            console.log("Congratulations! You won!")
+        }
+        else if (wins < losses) {
+            console.log("Sorry, try again next time!")
+        }
+        else {
+            console.log("Draw");
+        }
