@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <title>Game</title>
         <link rel = "stylesheet" type = "text/css" href = "rock_paper_scissors.css">
     </head>
-    <div class = "buttons">
-        <button id = "rock" class = "button-component" type="button">Rock</button>
-        <button id = "paper" class = "button-component" type="button">Paper</button>
-        <button id = "scissors" class = "button-component" type="button">Scissors</button>     
-    </div>   
-    <script src = "rock_paper_scissors.js"></script> 
-    <script>
-        let btnRock = document.querySelector('#rock');
-        btnRock.addEventListener('click', () => {
-            let playerSelection = "rock";
-            playRound(playerSelection);
-        });
+    <body>
+        <div class = "buttons">
+            <button id = "rock" class = "button-component" type="button">Rock</button>
+            <button id = "paper" class = "button-component" type="button">Paper</button>
+            <button id = "scissors" class = "button-component" type="button">Scissors</button>     
+        </div> 
+        <div class = "result">
+            <h2 id = "Result-Text">Result:</h2>
+        </div>  
+        <script src = "rock_paper_scissors.js"></script> 
+        <script>
+            let btnRock = document.querySelector('#rock');
+            btnRock.addEventListener('click', () => {
+                let playerSelection = "rock";
+                playRound(playerSelection);
+            });
 
-        let btnPaper = document.querySelector('#paper');
-        btnPaper.addEventListener('click', () => {
-            let playerSelection = "paper";
-            playRound(playerSelection);
-        });
+            let btnPaper = document.querySelector('#paper');
+            btnPaper.addEventListener('click', () => {
+                let playerSelection = "paper";
+                playRound(playerSelection);
+            });
 
-        let btnScissors = document.querySelector('#scissors');
-        btnScissors.addEventListener('click', () => {
-            let playerSelection = "scissors";
-            playRound(playerSelection);
-        });
-    </script>
+            let btnScissors = document.querySelector('#scissors');
+            btnScissors.addEventListener('click', () => {
+                let playerSelection = "scissors";
+                playRound(playerSelection);
+            });
+        </script>
+    </body>
 </html>
