@@ -7,8 +7,25 @@
     padding: 5px;
 }
 
-h2 {
+h2#Result-Text {
     float: left;
+}
+
+div.score-counter {
+    display: block;
+    position: absolute;
+    top: 130px;
+}
+
+div.conclusion {
+    position: absolute;
+    top: 180px;
+    text-align: center;
+}
+
+h3 {
+    margin-top: 4px;
+    margin-bottom: 4px;
 }
 
 p.resultText {
